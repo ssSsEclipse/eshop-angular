@@ -1,0 +1,5 @@
+<p>
+  {{ priceRange.min }} - {{ priceRange.max }}
+</p>
+
+<p-slider (onChange)="handleChange($event)" [step]="0.1" [(ngModel)]="rangeValues" [min]="priceRange.min" [max]="priceRange.max" [range]="true"></p-slider>

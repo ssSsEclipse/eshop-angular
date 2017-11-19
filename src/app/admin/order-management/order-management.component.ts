@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { OrderService } from '../../services/order.service';
 
 @Component({
   selector: 'app-order-management',
   templateUrl: './order-management.component.html',
   styleUrls: ['./order-management.component.css']
 })
-export class OrderManagementComponent implements OnInit {
+export class OrderManagementComponent {
+  orders$;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private orderService: OrderService) { 
+    this.orders$ = orderService.getOrders();
   }
 
 }
